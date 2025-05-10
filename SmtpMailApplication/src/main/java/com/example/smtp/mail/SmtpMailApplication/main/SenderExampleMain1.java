@@ -13,6 +13,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
 import org.springframework.util.ResourceUtils;
@@ -40,6 +42,8 @@ public class SenderExampleMain1 {
 	
 	private static String filePath = "MailContent.txt";
 	
+	private static DateTimeFormatter DTF = DateTimeFormatter.ofPattern("HH:mm:ss");
+	
 	public static void main(String[] args) throws MessagingException, IOException {
 	
 		// properties setting
@@ -64,7 +68,7 @@ public class SenderExampleMain1 {
 		MimeMessage message = new MimeMessage(session);
 		message.setFrom(new InternetAddress(senderConfig.getSnederEmail()));
 		message.setContent(getContent(), "text/html;charset=UTF-8");
-		message.setSubject(senderConfig.getSubject());
+		message.setSubject(senderConfig.getSubject() + ", 時間 " + LocalTime.now().format(DTF));
 		message.setRecipients(
 		        Message.RecipientType.TO,
 		        InternetAddress.parse(senderConfig.getEmail())
@@ -74,7 +78,7 @@ public class SenderExampleMain1 {
 		
         Transport.send(message);
 		
-        System.out.println("Sent message successfully....");
+        System.out.println("時間 : " + LocalTime.now().format(DTF) + ", Sent message successfully....");
 
 	}
 
