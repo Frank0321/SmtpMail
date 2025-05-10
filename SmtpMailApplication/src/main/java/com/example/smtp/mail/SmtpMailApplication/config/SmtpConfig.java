@@ -1,5 +1,5 @@
 /**
- * @Description : email 相關設定檔
+ * @Description : smtp 相關設定檔
  * @ClassName : EmailConfig.java
  * @Copyright : Copyright (c) 2025 
  * @ModifyHistory : 
@@ -12,10 +12,12 @@ package com.example.smtp.mail.SmtpMailApplication.config;
 import lombok.Data;
 
 @Data
-public class EmailConfig {
+public class SmtpConfig {
 	
+	/** smtp 帳號 */
 	private String userName = "";
 
+	/** smtp 密碼 */
 	private String userPxxd = "";
 	
 }

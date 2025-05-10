@@ -14,10 +14,16 @@ import lombok.Data;
 @Data
 public class SenderConfig {
 	
-	private String email = "lefty21050@gmail.com";
+	/** 寄件者 */
+	private String snederEmail = "";
 	
+	/** 收件者 */
+	private String email = "";
+	
+	/** 標題 */
 	private String subject = "測試 Hotmail SMTP";
 	
+	/** 內容 */
 	private String content = "這是從 Java 發出的測試郵件！";
 
 }

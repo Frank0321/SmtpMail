@@ -20,6 +20,12 @@ public class ReadFileMain {
 
 	private static String filePath = "MailContent.txt";
 
+	/***
+	 * 讀取 resources 底下檔案夾
+	 * 
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 
 		File file = ResourceUtils.getFile("classpath:" + filePath);
