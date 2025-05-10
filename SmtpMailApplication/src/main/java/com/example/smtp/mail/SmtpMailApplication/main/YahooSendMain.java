@@ -33,7 +33,6 @@ public class YahooSendMain {
 	
 	public static void main(String[] args) throws MessagingException {
 		
-		
 	    Properties props = new Properties();
         props.put("mail.smtp.host", SMTP_HOST_NAME);
         props.put("mail.smtp.port", "465");        
